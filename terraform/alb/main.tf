@@ -9,7 +9,7 @@ resource "aws_lb" "app_lb" {
 
 # Target Group
 resource "aws_lb_target_group" "my_target_group" {
-  name     = "${var.name}-target-group"
+  name     = "${var.name}-tg"
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc_id
