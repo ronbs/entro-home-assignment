@@ -8,7 +8,7 @@ resource "aws_lb" "app_lb" {
 }
 
 # Target Group
-resource "aws_lb_target_group" "my_target_group" {
+resource "aws_lb_target_group" "app_target_group" {
   name     = "${var.name}-tg"
   port     = 80
   protocol = "HTTP"
