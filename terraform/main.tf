@@ -50,7 +50,7 @@ resource "aws_security_group" "service_security_group" {
   }
 
   ingress {
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [module.alb.security_group.id]
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
