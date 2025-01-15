@@ -13,6 +13,7 @@ class RequestBody(BaseModel):
 
 @app.post("/write-to-s3")
 async def write_to_s3_endpoint(data: RequestBody):
+    # Need to change the env check on startup, and not on each request
     bucket_name = os.getenv("S3_BUCKET")
     if not bucket_name:
         raise HTTPException(status_code=500, detail="S3_BUCKET environment variable not set")
